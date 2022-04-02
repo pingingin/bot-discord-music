@@ -17,7 +17,13 @@ from dotenv import load_dotenv
 load_dotenv()
 token = os.getenv('TOKEN')
 
+
+
 bot = commands.Bot(command_prefix = '!', help_command = None)
+
+@bot.event
+async def on_ready():
+    print(f"Logged in as {bot.user}")
 
 ytdlopts = {
     'format': 'bestaudio/best',
@@ -292,5 +298,5 @@ async def skip(ctx):
 
     voice_client.stop()
     await ctx.send(f'**`{ctx.author}`**: Skipped the song!')
-    
+
 bot.run(token)
