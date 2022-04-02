@@ -300,5 +300,5 @@ async def skip(ctx):
     voice_client.stop()
     await ctx.send(f'**`{ctx.author}`**: Skipped the song!')
 
-keep_alive()
+#keep_alive()
 bot.run(token)
