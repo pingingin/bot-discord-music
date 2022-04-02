@@ -11,6 +11,7 @@ from async_timeout import timeout
 from functools import partial
 from discord.ext import commands
 import itertools
+from keep_alive import keep_alive
 
 import os
 from dotenv import load_dotenv
@@ -299,4 +300,5 @@ async def skip(ctx):
     voice_client.stop()
     await ctx.send(f'**`{ctx.author}`**: Skipped the song!')
 
+keep_alive()
 bot.run(token)
